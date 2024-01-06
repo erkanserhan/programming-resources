@@ -127,10 +127,10 @@ cin >> user_input;
 
 user_input *= 2;
 
-cout << user_input << '\n';
+cout << user_input << endl;
 ```
 
-You might notice the `'\n'` symbol. This is a special character that represends a newline (enter key).
+You might notice the `endl` symbol. This is a special character that represends a newline (enter key).
 Some IDEs will print output weirdly if you don't use a newline at the end of your program. Others don't but it's good practice
 just in case.
 
@@ -143,6 +143,38 @@ bigger numbers, we have to use a different type of variable with a bigger size -
 
 # Exercises
 
+Modify the `doubler.cpp` program so that it gives the user a prompt when run, such as `Enter a number for the program to double: ` or something like that.
+
+<details>
+	<summary>Solution</summary>
+
+```c++
+cout << "Enter a number for the program to double: ";
+
+int user_input;
+cin >> user_input;
+
+user_input *= 2;
+
+cout << user_input << endl;
+```
+</details>
+
+What if you wanted the program to input two numbers and add them together, instead of taking in one number and doubling it?
+For example, if you inputted `2` and `3`, it would print out `5`.
+
+<details>
+	<summary>Solution</summary>
+
+```c++
+int number1, number2;
+cin >> number1 >> number2;
+
+int result = number1 + number2;
+
+cout << result << endl;
+```
+</details>
 
 </details>
 </details>
