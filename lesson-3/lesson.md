@@ -27,6 +27,61 @@ Let's write a program that asks the user for an integer, and then repeatedly ask
 integer is. For example, if the integer is `3`, and you enter `78`, the program will ask you to guess again,
 until you guess `3`.
 
-Try and write as much of this as you can.
+Let's write the first part of the program - asking the user for the integer.
 
-<
+<details>
+	<summary>Solution</summary>
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main() {
+	int integer_to_guess;
+
+	cout << "Enter the integer to guess: ";
+	cin >> integer_to_guess;
+}
+```
+
+Now, we need to ask the user to guess numbers until they guess correctly.
+
+How could we do that with a while loop?
+
+<details>
+	<summary>Solution</summary>
+
+```c++
+int guess;
+
+cin >> guess;
+
+while(guess != integer_to_guess) {
+	cout << "Incorrect! Please guess again: ";
+	cin >> guess;
+}
+
+cout << "You got it!" << endl;
+```
+
+Currently, if you guess incorrectly, the program just tells you that you got it wrong.
+It would be more helpful if the program instead tells you if you guessed too high or too long.
+Try to add this to the program.
+
+<details>
+	<summary>Solution</summary>
+
+```c++
+while(guess != integer_to_guess) {
+	if(guess > integer_to_guess) {
+		cout << "You guessed too high. Please guess again: ";
+	} else {
+		cout << "You guessed too low. Please guess again: ";
+	}
+
+	cin >> guess;
+}
+```
+</details>
+</details>
+</details>
