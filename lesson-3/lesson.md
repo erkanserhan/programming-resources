@@ -21,7 +21,7 @@ while(target is left of where we are pointing) {
 Just like an if statement, we put the condition in `()`, and the code to be run in `{}`. The condition
 is, like an if statement, an expression that is either true or false.
 
-# A simple exercise
+# A simple example
 
 Let's write a program that asks the user for an integer, and then repeatedly asks the user to guess what the
 integer is. For example, if the integer is `3`, and you enter `78`, the program will ask you to guess again,
@@ -83,7 +83,7 @@ while(guess != integer_to_guess) {
 }
 ```
 
-# A slightly more complex exercise
+# A slightly more complex example
 
 While loops are useful for a variety of situations. Let's write a new program that adds together any number of integers that the user gives.
 First, it should ask the user for how many numbers to add together, and then ask for each of the numbers.
@@ -189,6 +189,57 @@ while(condition) {
 	code
 }
 ```
+
+# Exercises
+
+Write a program that calculates the factorial of whatever number is given to it.
+
+<details>
+	<summary>Solution</summary>
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main() {
+	int input;
+	cin >> input;
+
+	int product = 1; // We can't set it to 0
+	for(int iteration = 1; iteration < input; iteration++) {
+		product *= iteration;
+	}
+
+	cout << product << endl;
+}
+```
+</details>
+
+Given two numbers `A` and `B`, write a program that prints out all of the multiples of `B` that are less than `A`.
+This one takes a bit of thought.
+
+<details>
+	<summary>Solution</summary>
+
+For loops are basically just fancy while loops that keep track of a counter. Up until now, we've had the counter
+increase by 1 every loop, but this isn't the only thing we can do. If we start the counter at `B`, and increase
+it by `B` every loop, and make our condition `counter < A`, our program will print out `B`, `2*B`, `3*B`, etc. until it
+hits `A`.
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main() {
+	int A, B;
+	cin >> A >> B;
+
+	for(int multiple = B; multiple < A; multiple += B) {
+		cout << multiple << endl;
+	}
+}
+```
+</details>
 
 </details>
 
