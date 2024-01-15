@@ -6,7 +6,7 @@ int main() {
 	cin >> input;
 
 	int product = 1; // We can't set it to 0
-	for(int iteration = 1; iteration < input; iteration++) {
+	for(int iteration = 1; iteration <= input; iteration++) {
 		product *= iteration;
 	}
 
