@@ -6,6 +6,6 @@ int main() {
 	cin >> A >> B;
 
 	for(int multiple = B; multiple < A; multiple += B) {
-		cout << multiple << endl;
+		cout << multiple << endl; 
 	}
 }
