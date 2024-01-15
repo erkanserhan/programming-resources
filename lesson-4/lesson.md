@@ -19,7 +19,8 @@ would give an `int` as its result, and a function that capitalizes a word would 
 associated result, and just run a piece of code - these functions have datatype `void`.
 
 Just like conditional statements and loops, the `{}` enclose a piece of code - the piece of code that gets run whenever this
-function is run.
+function is run, and the `()` enclose conditions that change the behavior of the code. Rather than being just true or false, they
+can be whatever the programmer wants, and there can be any number of them.
 
 Some functions will require inputs and others won't. A function that calculates the square of an integer will need the
 program to give it the integer so that it can perform calculations with it. In c++, the programmer gives the data type of
@@ -53,3 +54,45 @@ int factorial(int number) {
 	return product;
 }
 ```
+
+The `return` command also exits the code running in the function. We'll show this with a simple example - a function that, given
+a number `n`, outputs `n/2` if `n` is even, or `3*n + 1` otherwise.
+
+```c++
+int some_function(int n) {
+	if(n % 2 == 0) {
+		return n/2;
+	}
+
+	return 3*n + 1;
+}
+```
+
+If the `return` command didn't exit the function when it gets run, this function would give two different values as its result.
+
+Now that we've learned how to declare functions, how do we run them? The syntax we use is very similar to the syntax used to
+declare the function, but without the data type and the code block. A semicolon is necessary, because running a function is an operation.
+
+```c++
+function_name(inputs);
+```
+
+If the function has a data type other than void, this operation will be an expression, and its value will be whatever its return value is.
+For example, if we wanted to use the `factorial` function we wrote earlier, we could do this:
+
+```
+int input;
+cin >> input;
+int result = factorial(input);
+cout << result << endl;
+```
+
+`factorial(input)` is treated like an integer, just like `35` or `295` would be.
+
+# Utilization
+
+Functions are a very useful tool. Not all USACO problems will require the programmer to write their own functions, because c++ has built-in
+functions to do a lot of relatively complicated tasks. However, most real-world programs will use them a lot.
+
+In order to write programs where functions are necessary, we'll have to learn more complicated data structures and concepts first, so there
+won't be any exercises for this lesson.
