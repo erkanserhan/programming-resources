@@ -80,7 +80,7 @@ function_name(inputs);
 If the function has a data type other than void, this operation will be an expression, and its value will be whatever its return value is.
 For example, if we wanted to use the `factorial` function we wrote earlier, we could do this:
 
-```
+```c++
 int input;
 cin >> input;
 int result = factorial(input);
